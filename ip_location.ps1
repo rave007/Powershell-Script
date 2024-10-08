@@ -9,11 +9,11 @@ function Get-IpLocation {
         [string]$IPAddress
     )
 
-    # Query the IP location API
+    #Query the IP location API
     $url = "https://ipinfo.io/$IPAddress/json"
     try {
         $response = Invoke-RestMethod -Uri $url
-        # Create a custom object to hold the location information
+        #Create a custom object to hold the location information
         return [PSCustomObject]@{
             IP            = $response.ip
             City          = $response.city
